@@ -1,4 +1,189 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
 body {
-    background-color: #333;
-    color: white;
+    box-sizing: border-box;
+}
+
+html {
+    /* Common technique to make converting to rem easy */
+    /* We want 10px --> 10/16 --> 62.5% */
+    font-size: 62.5%;
+}
+
+/* Custom properties -- update these for your own design */
+
+:root {
+    --ff-primary: 'Source Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-light: #fff;
+    --clr-dark: #333;
+    --clr-accent1: #222;
+    --clr-accent2: #444;
+    --clr--accent3: #555;
+
+    --fs-h1: 4rem;
+    --fs-h2: 2.5rem;
+    --fs-h3: 2rem;
+    --fs-body: 1.6rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+          0.125em 0.125em 0.25em rgba(0,0,0,.15);
+}
+
+@media (min-width: 900px) {
+    :root {
+        --fs-h1: 6rem;
+        --fs-h2: 4.5rem;
+        --fs-h3: 2.5rem;
+        --fs-body: 2rem;
+    }
+}
+
+/* General Styles */
+body {
+    color: var(--clr-light);
+    background-color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+/* Typography */
+
+
+
+
+/* Main Layout */
+.main {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 200px auto;
+    grid-template-areas:
+        "nav header"
+        "nav spacer"
+        "nav content"
+        "nav footer"
+}
+
+.nav {
+    grid-area: nav;
+}
+
+.header {
+    grid-area: header;
+}
+
+.spacer {
+    grid-area: spacer;
+}
+
+.content {
+    grid-area: content;
+}
+
+.footer {
+    grid-area: footer;
+    height: 100px;
+}
+
+@media (max-width: 900px) {
+    .main {
+        display: block;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+
+/* Navigation Styles*/
+.nav {
+    background-color: var(--clr-accent1)
+}
+
+.logo {
+    text-align: center;
+    padding: 1em;
+}
+
+.nav-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.nav-list__item {
+    text-align: center;
+}
+
+.nav-list__item:hover {
+    background-color: var(--clr-accent2);
+    cursor: pointer;
+}
+
+.nav-list__item a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: var(--clr-light);
+}
+
+/* Header Styles */
+.header {
+    padding: 5em 2em;
+    height: 95vh;
+}
+
+.hero {
+    background-image: url('../resources/hero.jpg');
+    background-size: cover;
+    background-position: top center;
+
+}
+
+.header__title {
+    text-align: center;
+}
+
+.header__btn {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Spacer Styles */
+.spacer {
+    height: 5vh;
+    background-color: var(--clr-light);
+}
+
+/* Content Styles */
+.content {
+    padding: 2em;
 }
