@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div class="main">
         <nav class="nav">
-            <img src={tempLogo} />
+            <img class="nav__logo" src={tempLogo} />
             <ul class="nav-list">
                 <li class="nav-list__item"><a href="#0">Home</a></li>
                 <li class="nav-list__item"><a href="#2">About</a></li>
