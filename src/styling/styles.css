@@ -28,8 +28,22 @@ html {
     --clr-light: #fff;
     --clr-dark: #333;
     --clr-accent1: #222;
+    --clr-accent1-tran: #222222cc;
     --clr-accent2: #444;
-    --clr--accent3: #555;
+    --clr-accent2-tran: #444444cc;
+    --clr-accent3: #555;
+    --clr-accent4: #7b0a1cff;
+    --clr-accent5: #b6142cff;
+
+
+    /* Color palette options */
+    /* #28b485c3 */
+    /* #7ed56fcb */
+    /* #161f28ff */
+    /* #7b0a1cff */
+    /* #b6142cff */
+    /* #e67e4eff */
+    
 
     --fs-h1: 4rem;
     --fs-h2: 2.5rem;
@@ -62,6 +76,7 @@ body {
 img {
     display: block;
     max-width: 100%;
+    max-width: 200px;
 }
 
 p {
@@ -159,6 +174,7 @@ p {
 .header {
     padding: 5em 2em;
     height: 95vh;
+    position: relative;
 }
 
 .hero {
@@ -168,13 +184,29 @@ p {
 
 }
 
-.header__title {
+.header__text-box {
+    padding-left: 20rem;
+    padding-top: 10rem;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
 .header__btn {
-    display: block;
-    margin: 0 auto;
+    font-size: var(--fs-h2);
+    background-color: var(--clr-accent4);
+    color: var(--clr-light);
+    padding: 1.5rem 3rem;
+    margin-top: 5rem;
+    border: none;
+    border-radius: 20rem;
+}
+
+.header__btn:hover {
+    background-color: var(--clr-accent5);
+    cursor: pointer;
 }
 
 /* Spacer Styles */
